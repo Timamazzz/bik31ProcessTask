@@ -1,0 +1,30 @@
+# Virtual Environment
+venv/
+.venv/
+ENV/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches
+.caches/
+
+# Logs
+*.log
+
+# Local data
+db.sqlite3
+db.sqlite3-journal
+
+# Ignore .env file containing your secrets
+.env
+
+# Ignore log files
+*.log
+
+# Ignore Django migration files
+**/migrations/
+
+.idea/

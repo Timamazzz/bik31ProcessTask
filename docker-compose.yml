@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+    environment:
+      - DJANGO_SETTINGS_MODULE=bik31ProcessTask.settings.production
+
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: bik31ProcessTaskDb
+      MYSQL_USER: itcomsqluser
+      MYSQL_PASSWORD: CR0504slpot!a
+    ports:
+      - "3306:3306"
