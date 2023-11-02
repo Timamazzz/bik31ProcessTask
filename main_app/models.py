@@ -72,7 +72,6 @@ class CustomUser(AbstractUser):
 
 class LifeSituation(models.Model):
     name = models.CharField(max_length=100,
-                            choices=[(name.name, name.value) for name in LifeSituationName],
                             verbose_name="Жизненная ситуация", blank=True,
                             null=True, )
     identifier = models.CharField(max_length=50, verbose_name="Идентификатор", blank=True, null=True)
