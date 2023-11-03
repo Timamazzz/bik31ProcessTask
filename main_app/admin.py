@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 from .models import CustomUser, LifeSituation, Process, Service, Organization
 
 
@@ -6,7 +7,7 @@ class OrganizationAdmin(admin.ModelAdmin):
     list_display = ('name', 'code')
 
 
-class CustomUserAdmin(admin.ModelAdmin):
+class CustomUserAdmin(UserAdmin):
     list_display = ('email', 'first_name', 'last_name', 'patronymic', 'organization')
     search_fields = ('email', 'first_name', 'last_name', 'patronymic', 'organization__name')
     list_filter = ('is_staff', 'is_superuser', 'is_active', 'groups', 'date_joined', 'organization')
